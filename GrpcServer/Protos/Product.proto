@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option csharp_namespace = "GrpcServer.Protos";
+
+
+service ProductService {
+	rpc AddProduct(RequestProductDTO) returns (ResponseAddProduct);
+}
+
+
+message RequestProductDTO {
+	string Name=1;
+	string BrandName =2;
+	int32 Price = 3;
+}
+
+message ResponseAddProduct {
+	bool IsSuccess = 1;
+}
