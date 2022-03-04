@@ -1,5 +1,6 @@
 ﻿using Grpc.Core;
 using GrpcServer.Protos;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -26,6 +27,9 @@ namespace GrpcServer.GRPC
                 BrandName = request.BrandName,
                 Price = request.Price
             });
+            Console.WriteLine("Product Name: {0}", request.Name);
+            Console.WriteLine("Product BrandName: {0}", request.BrandName);
+            Console.WriteLine("Product Price: {0}", request.Price );
 
             return Task.FromResult(new ResponseAddProduct() { IsSuccess = true });
         }
